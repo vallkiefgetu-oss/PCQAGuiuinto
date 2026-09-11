@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture City Question and Answer (PCQA)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header & Top Navigation Tabs -->
+        <header>
+            <h1>Picture City Q&A (PCQA)</h1>
+            <p>Test your knowledge on photography services, packages, and frames!</p>
+            <nav id="navbar" class="nav-tabs">
+                <button class="nav-btn active" data-tab="login-tab">Login</button>
+                <button class="nav-btn" data-tab="register-tab">Create Account</button>
+                <button class="nav-btn" data-tab="leaderboard-tab">Leaderboard</button>
+            </nav>
+        </header>
+
+        <!-- Main Content Wrapper -->
+        <main>
+            <!-- LOGIN TAB -->
+            <section id="login-tab" class="tab-content active">
+                <div class="card">
+                    <h2>Player Login</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-username">Username</label>
+                            <input type="text" id="login-username" required placeholder="Enter your username">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" required placeholder="Enter your password">
+                        </div>
+                        <button type="submit" class="btn primary-btn">Login & Play</button>
+                    </form>
+                    <p class="switch-text">Don't have an account? <a href="#" id="switch-to-register">Create one here</a></p>
+                </div>
+            </section>
+
+            <!-- CREATE ACCOUNT TAB -->
+            <section id="register-tab" class="tab-content">
+                <div class="card">
+                    <h2>Create New Account</h2>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="reg-username">Username</label>
+                            <input type="text" id="reg-username" required placeholder="Choose a username">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Password</label>
+                            <input type="password" id="reg-password" required placeholder="Choose a password">
+                        </div>
+                        <button type="submit" class="btn primary-btn">Register Account</button>
+                    </form>
+                    <p class="switch-text">Already have an account? <a href="#" id="switch-to-login">Login here</a></p>
+                </div>
+            </section>
+
+            <!-- LEADERBOARD TAB -->
+            <section id="leaderboard-tab" class="tab-content">
+                <div class="card leaderboard-card">
+                    <h2>Hall of Fame (Leaderboard)</h2>
+                    <div class="table-responsive">
+                        <table id="leaderboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Player</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboard-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAME PLAY SCREEN (Starts immediately upon login) -->
+            <section id="game-section" class="tab-content">
+                <div class="card game-card">
+                    <div class="game-header-info">
+                        <span id="player-welcome">Welcome, Player</span>
+                        <div class="game-stats">
+                            <span>Question: <strong id="current-q-num">1</strong>/100</span>
+                            <span>Score: <strong id="current-score">0</strong></span>
+                        </div>
+                        <button id="logout-btn" class="btn danger-btn">Log Out</button>
+                    </div>
+
+                    <div id="question-container">
+                        <h3 id="question-text">Loading question...</h3>
+                        <div class="choices-grid">
+                            <button class="choice-btn" data-choice="A">A. <span id="choice-a-text"></span></button>
+                            <button class="choice-btn" data-choice="B">B. <span id="choice-b-text"></span></button>
+                            <button class="choice-btn" data-choice="C">C. <span id="choice-c-text"></span></button>
+                            <button class="choice-btn" data-choice="D">D. <span id="choice-d-text"></span></button>
+                        </div>
+                    </div>
+
+                    <div id="feedback-container" class="hidden">
+                        <p id="feedback-message"></p>
+                        <button id="next-btn" class="btn primary-btn">Next Question</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
